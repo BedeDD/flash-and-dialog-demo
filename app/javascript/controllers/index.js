@@ -9,6 +9,3 @@ application.register("dialog", DialogController)
 
 import FlashMessageController from "./flash_message_controller"
 application.register("flash-message", FlashMessageController)
-
-import HelloController from "./hello_controller"
-application.register("hello", HelloController)

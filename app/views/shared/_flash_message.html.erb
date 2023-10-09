@@ -4,5 +4,5 @@
     <%= message %>
   </p>
 
-  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" data-controller="flash-message" data-hide-after-ms="<%= Rails.configuration.x.flash_duration %>" data-persistent-message="<%= 1 if local_assigns[:persistent_message].present? %>"></button>
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" data-controller="flash-message" data-flash-message-hide-after-value="<%= Rails.configuration.x.flash_duration %>" data-flash-message-persistent-value="<%= local_assigns[:persistent_message].presence || false %>"></button>
 </div>

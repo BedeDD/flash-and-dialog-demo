@@ -13,7 +13,7 @@ bin/dev
 
 Open http://localhost:3000 in your browser.
 
-**MAKE SURE REDIS SERVER IS RUNNING ON localhost:6379!** otherwise turbo streams will not work.
+**MAKE SURE REDIS SERVER IS RUNNING ON localhost:6379!** otherwise turbo stream broadcasting to channels will not work.
 
 ## Configuration
 

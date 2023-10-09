@@ -41,6 +41,6 @@ class PagesController < ApplicationController
   end
 
   def show_dialog
-    @no_close = params.fetch('no_close', '0')
+    @no_close = params.fetch('no_close', false)
   end
 end

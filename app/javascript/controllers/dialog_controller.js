@@ -6,18 +6,20 @@ export default class extends Controller {
   // and here at targets too - afterwards they can be accessed by this.myTargets (plural), this.myTarget (first of list)
   // see: https://stimulus.hotwired.dev/reference/targets
 
-
   // to show a dialog on a page insert the following snippet into the DOM itself or into a turbo_frame when using a turbo_stream response
   // <dialog data-controller="dialog" data-dialog-target="modalToShow" data-no-close="1">YOUR HTML CONTENT HERE</dialog>
   // you can use data-no-close="1" in the dialog element to block the cancel event and not close the dialog when clicking outside of it
   static targets = ['modalToShow']
-  connect() {
-    // console.log('dialog controller connected')
 
+  // for values usage see: https://stimulus.hotwired.dev/reference/values
+  static values = {
+    noClose: Boolean
+  }
+  connect() {
     this.modalToShowTarget.showModal()
     // close on click to backdrop
     // based on: https://stackoverflow.com/a/72916231
-    if (this.modalToShowTarget.dataset.noClose === '1') {
+    if (this.noCloseValue) {
       this.modalToShowTarget.addEventListener('cancel', (event) => {
         event.preventDefault();
       });

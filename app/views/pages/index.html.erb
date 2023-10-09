@@ -7,7 +7,7 @@
       <div class="row">
         <div class="col">
           <%= button_to('show dialog', show_dialog_path, class: 'btn btn-primary mb-3') %>
-          <%= button_to('show "not closable" dialog', show_dialog_path(params: { no_close: 1 }), class: 'btn btn-danger') %>
+          <%= button_to('show "not closable" dialog', show_dialog_path(params: { no_close: true }), class: 'btn btn-danger') %>
         </div>
       </div>
     </div>
@@ -21,10 +21,10 @@
         <div class="col"><%= button_to('show error/danger flash', pages_show_error_path, class: 'btn btn-danger mb-3') %></div>
       </div>
       <div class="row">
-        <div class="col"><%= button_to('show persistent success flash', pages_show_success_path(params: { persistent: 1 }), class: 'btn btn-success mb-3') %></div>
-        <div class="col"><%= button_to('show persistent info flash', pages_show_info_path(params: { persistent: 1 }), class: 'btn btn-info mb-3') %></div>
-        <div class="col"><%= button_to('show persistent warning flash', pages_show_warning_path(params: { persistent: 1 }), class: 'btn btn-warning mb-3') %></div>
-        <div class="col"><%= button_to('show persistent error/danger flash', pages_show_error_path(params: { persistent: 1 }), class: 'btn btn-danger mb-3') %></div>
+        <div class="col"><%= button_to('show persistent success flash', pages_show_success_path(params: { persistent: true }), class: 'btn btn-success mb-3') %></div>
+        <div class="col"><%= button_to('show persistent info flash', pages_show_info_path(params: { persistent: true }), class: 'btn btn-info mb-3') %></div>
+        <div class="col"><%= button_to('show persistent warning flash', pages_show_warning_path(params: { persistent: true }), class: 'btn btn-warning mb-3') %></div>
+        <div class="col"><%= button_to('show persistent error/danger flash', pages_show_error_path(params: { persistent: true }), class: 'btn btn-danger mb-3') %></div>
       </div>
     </div>
   </div>

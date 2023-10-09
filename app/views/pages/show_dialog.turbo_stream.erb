@@ -1,16 +1,16 @@
 <%= turbo_stream.update 'dialog' do %>
-  <dialog id="myGenericDialog" class="rounded-3xl" data-controller="dialog" data-dialog-target="modalToShow" data-no-close="<%= @no_close %>">
+  <dialog id="myGenericDialog" class="rounded-3xl" data-controller="dialog" data-dialog-target="modalToShow" data-dialog-no-close-value="<%= @no_close ? 'true' : false %>">
     <h1>This is a dialog</h1>
-    <% if @no_close != '1' %>
-      <p>This dialog closes when clicking outside of the dialog or hitting:</p>
-      <pre>ESC</pre>
-    <% else %>
+    <% if @no_close %>
       <button data-action="dialog#close" class="btn btn-outline-info" style="position: absolute;top: 15px;right: 15px;">
         <i class="bi-x"></i>
       </button>
       <p>This dialog does NOT close clicking outside of the dialog or hitting:</p>
       <pre>ESC</pre>
       <p>It only closes when clicking the close button (top right) or submitting a form inside the dialog.</p>
+    <% else %>
+      <p>This dialog closes when clicking outside of the dialog or hitting:</p>
+      <pre>ESC</pre>
     <% end %>
   </dialog>
 <% end %>
