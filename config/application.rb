@@ -23,5 +23,9 @@ module FlashAndDialogDemo
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+
+    # Duration to show a flash message in milliseconds
+    # 2_000 is for demo - in real app 5_000 has proven to be a good value
+    config.x.flash_duration = 2_000
   end
 end

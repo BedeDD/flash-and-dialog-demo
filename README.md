@@ -1,22 +1,33 @@
 # README
 
 Demo App for Flash Messages and Dialogs using hotwire and stimulus
-Things you may want to cover:
 
-* Ruby version
+## Installation
 
-* System dependencies
+```bash
+git clone git@github.com:BedeDD/flash-and-dialog-demo.git
+cd flash-and-dialog-demo
+bin/setup
+bin/dev
+```
 
-* Configuration
+Open http://localhost:3000 in your browser.
 
-* Database creation
+## Configuration
 
-* Database initialization
+You might want to change the flash duration in [application.rb](config/application.rb) using the key: `config.x.flash_duration`.
 
-* How to run the test suite
+## Hints
 
-* Services (job queues, cache servers, search engines, etc.)
+Using flash messages with turbo you need to write your messages to `flash.now` instead of `flash` in your controller. Otherwise you messages will be displayed twice or including the previously set message.
 
-* Deployment instructions
+```ruby
+# good
+flash.now[:notice] = "This is a flash message"
 
-* ...
+# bad
+flash[:notice] = "This is a flash message"
+```
+
+**MAKE SURE REDIS SERVER IS RUNNING ON localhost:6379!**
+

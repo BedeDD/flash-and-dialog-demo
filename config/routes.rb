@@ -12,5 +12,8 @@ Rails.application.routes.draw do
   match 'pages/show_error', via: %i[get put post]
   match 'pages/show_info', via: %i[get put post]
   match 'pages/show_success', via: %i[get put post]
+  match 'pages/show_warning', via: %i[get put post]
   match 'pages/show_dialog', via: %i[get put post], as: :show_dialog
+
+  root 'pages#index'
 end

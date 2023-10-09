@@ -14,5 +14,16 @@
     display: inline-block;
     background-color: lightgrey;
     font-family: monospace;
+    padding: 2px 4px;
+    border-radius: 5px;
   }
+}
+
+turbo-frame#demo_stream_tag {
+  display: block;
+  width: 100%;
+  min-height: 150px;
+  border: 1px solid lightcoral;
+  border-radius: 15px;
+  padding: 25px;
 }

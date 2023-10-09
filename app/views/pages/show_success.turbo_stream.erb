@@ -1,5 +1,0 @@
-<%= turbo_stream.prepend 'flash-messages' do %>
-  <% flash.each do |type, message| %>
-    <%= render partial: 'toast', locals: { type: type, message: message } %>
-  <% end %>
-<% end %>

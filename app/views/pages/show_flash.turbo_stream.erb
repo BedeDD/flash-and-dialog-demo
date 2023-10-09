@@ -1,0 +1,5 @@
+<%= turbo_stream.prepend 'flash-messages' do %>
+  <% flash.each do |type, message| %>
+    <%= render partial: 'shared/flash_message', locals: { type: type, message: message, persistent_message: @persistent_message.present? } %>
+  <% end %>
+<% end %>

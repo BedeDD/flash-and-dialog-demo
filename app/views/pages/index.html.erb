@@ -1,8 +1,57 @@
 <section>
   <h1>Demo</h1>
   <hr>
-  <%= button_to('show dialog', show_dialog_path, class: 'btn btn-primary mb-3') %>
-  <%= button_to('show "not closable" dialog', show_dialog_path(params: { no_close: 1 }), class: 'btn btn-danger') %>
+  <div class="row">
+    <div class="col-4">
+      <h2>Dialog</h2>
+      <div class="row">
+        <div class="col">
+          <%= button_to('show dialog', show_dialog_path, class: 'btn btn-primary mb-3') %>
+          <%= button_to('show "not closable" dialog', show_dialog_path(params: { no_close: 1 }), class: 'btn btn-danger') %>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-8">
+      <h2>Flash Messages with turbo frame</h2>
+      <div class="row">
+        <div class="col"><%= button_to('show success flash', pages_show_success_path, class: 'btn btn-success mb-3') %></div>
+        <div class="col"><%= button_to('show info flash', pages_show_info_path, class: 'btn btn-info mb-3') %></div>
+        <div class="col"><%= button_to('show warning flash', pages_show_warning_path, class: 'btn btn-warning mb-3') %></div>
+        <div class="col"><%= button_to('show error/danger flash', pages_show_error_path, class: 'btn btn-danger mb-3') %></div>
+      </div>
+      <div class="row">
+        <div class="col"><%= button_to('show persistent success flash', pages_show_success_path(params: { persistent: 1 }), class: 'btn btn-success mb-3') %></div>
+        <div class="col"><%= button_to('show persistent info flash', pages_show_info_path(params: { persistent: 1 }), class: 'btn btn-info mb-3') %></div>
+        <div class="col"><%= button_to('show persistent warning flash', pages_show_warning_path(params: { persistent: 1 }), class: 'btn btn-warning mb-3') %></div>
+        <div class="col"><%= button_to('show persistent error/danger flash', pages_show_error_path(params: { persistent: 1 }), class: 'btn btn-danger mb-3') %></div>
+      </div>
+    </div>
+  </div>
+
   <hr>
-  <%= button_to('show success flash', pages_show_success_path, class: 'btn btn-success mb-3') %>
+
+  <h2>Fun with turbo streams</h2>
+  <div class="row">
+    <div class="col">
+      <%= turbo_frame_tag 'demo_stream_tag'%>
+    </div>
+    <div class="col">
+      Running this code will make the content appear in the box to the left:<br><br>
+      <pre class="m-0">
+Turbo::StreamsChannel.broadcast_append_to(
+  'my_demo_stream', # the stream name
+  target: 'demo_stream_tag', # the turbo frame id to append to
+  partial: 'pages/stream_demo' # the partial to render
+)
+      </pre>
+    </div>
+  </div>
+
+  <div class="row">
+    <p>Copy this and paste into a rails console or below</p>
+    <pre class="m-0">Turbo::StreamsChannel.broadcast_append_to('my_demo_stream', target: 'demo_stream_tag', partial: 'pages/stream_demo')</pre>
+  </div>
 </section>
+
+<%= console %>
