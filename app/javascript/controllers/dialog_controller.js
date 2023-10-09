@@ -7,8 +7,8 @@ export default class extends Controller {
   // see: https://stimulus.hotwired.dev/reference/targets
 
 
-  // to sho a dialog on a page insert the following snippet into the DOM itself or into a turbo_frame when using a turbo_stream response
-  // <dialog data-controller="dialog" data-dialog-target="modalToShow" data-no-close="1" data-product-package-upgrade-target="loaderDialog">YOUR HTML CONTENT HERE</dialog>
+  // to show a dialog on a page insert the following snippet into the DOM itself or into a turbo_frame when using a turbo_stream response
+  // <dialog data-controller="dialog" data-dialog-target="modalToShow" data-no-close="1">YOUR HTML CONTENT HERE</dialog>
   // you can use data-no-close="1" in the dialog element to block the cancel event and not close the dialog when clicking outside of it
   static targets = ['modalToShow']
   connect() {
