@@ -15,7 +15,7 @@ export default class extends Controller {
     // console.log('dialog controller connected')
 
     this.modalToShowTarget.showModal()
-    // clos on click to backdrop
+    // close on click to backdrop
     // based on: https://stackoverflow.com/a/72916231
     if (this.modalToShowTarget.dataset.noClose === '1') {
       this.modalToShowTarget.addEventListener('cancel', (event) => {
