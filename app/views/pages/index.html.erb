@@ -1,0 +1,8 @@
+<section>
+  <h1>Demo</h1>
+  <hr>
+  <%= button_to('show dialog', show_dialog_path, class: 'btn btn-primary mb-3') %>
+  <%= button_to('show "not closable" dialog', show_dialog_path(params: { no_close: 1 }), class: 'btn btn-danger') %>
+  <hr>
+  <%= button_to('show success flash', pages_show_success_path, class: 'btn btn-success mb-3') %>
+</section>
