@@ -13,7 +13,7 @@ export default class extends Controller {
 
   // for values usage see: https://stimulus.hotwired.dev/reference/values
   static values = {
-    noClose: Boolean
+    noClose: { type: Boolean, default: false }
   }
   connect() {
     this.modalToShowTarget.showModal()

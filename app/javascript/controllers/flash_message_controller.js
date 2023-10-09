@@ -4,7 +4,7 @@ import { Controller } from "@hotwired/stimulus"
 export default class extends Controller {
   // see: https://stimulus.hotwired.dev/reference/values
   static values = {
-    persistent: Boolean,
+    persistent: { type: Boolean, default: false },
     hideAfter: { type: Number, default: 5_000 },
   }
   connect() {
