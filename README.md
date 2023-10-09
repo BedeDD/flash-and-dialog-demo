@@ -13,6 +13,8 @@ bin/dev
 
 Open http://localhost:3000 in your browser.
 
+**MAKE SURE REDIS SERVER IS RUNNING ON localhost:6379!** otherwise turbo streams will not work.
+
 ## Configuration
 
 You might want to change the flash duration in [application.rb](config/application.rb) using the key: `config.x.flash_duration`.
@@ -28,6 +30,4 @@ flash.now[:notice] = "This is a flash message"
 # bad
 flash[:notice] = "This is a flash message"
 ```
-
-**MAKE SURE REDIS SERVER IS RUNNING ON localhost:6379!**
 
