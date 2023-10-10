@@ -9,11 +9,12 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
 
-  match 'pages/show_error', via: %i[get put post]
-  match 'pages/show_info', via: %i[get put post]
-  match 'pages/show_success', via: %i[get put post]
-  match 'pages/show_warning', via: %i[get put post]
-  match 'pages/show_dialog', via: %i[get put post], as: :show_dialog
+  post 'pages/show_error'
+  post 'pages/show_info'
+  post 'pages/show_success'
+  post 'pages/show_warning'
+  post 'pages/show_dialog', as: :show_dialog
+  get 'pages/static_flash'
 
   root 'pages#index'
 end

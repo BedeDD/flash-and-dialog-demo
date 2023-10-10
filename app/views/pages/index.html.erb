@@ -13,6 +13,15 @@
     </div>
 
     <div class="col-8">
+      <h2>Static Flash Messages</h2>
+      <div class="row">
+        <div class="col">
+          <%= link_to 'Classic GET request as HTML', pages_static_flash_path %>
+        </div>
+        <div class="col">
+          <%= link_to 'Classic GET request as HTML with persistent message', pages_static_flash_path(params: { persistent: true }) %>
+        </div>
+      </div>
       <h2>Flash Messages with turbo frame</h2>
       <div class="row">
         <div class="col"><%= button_to('show success flash', pages_show_success_path, class: 'btn btn-success mb-3') %></div>
